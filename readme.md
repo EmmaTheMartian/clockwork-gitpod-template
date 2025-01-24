@@ -9,6 +9,21 @@ install V and Clockwork.
 - Add your project's name to `.gitignore`
 - Replace this README
 
+## Using the Template
+
+You can either click the `Use this template` button at the top right to make a
+new repo using this template, or you can run this in your shell:
+
+```
+git clone https://github.com/emmathemartian/clockwork-gitpod-template &&\
+find clockwork-gitpod-template -maxdepth 1 -mindepth 1 -not -name .git -exec mv '{}' . \; &&\
+rm -rf clockwork-gitpod-template
+```
+
+> This script will clone the template, then move all files from it into the
+> working directory *except* for the `.git` folder, then finally delete the
+> `clockwork-gitpod-template` folder.
+
 ## Template License
 
 This template is licensed under MIT-0, which is MIT but no attribution needed.
