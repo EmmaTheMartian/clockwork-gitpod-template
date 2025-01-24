@@ -3,7 +3,7 @@ Module {
 	description: 'TODO'
 	version: '0.0.0'
 	license: 'TODO'
-	author: 'Me!'
+	author: 'TODO'
 	repo_url: 'TODO'
 	dependencies: []
 }

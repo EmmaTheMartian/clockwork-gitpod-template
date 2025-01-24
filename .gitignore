@@ -1,6 +1,6 @@
 # Binaries for programs and plugins
 main
-clockwork
+# TODO: put your project's name here to ignore executable builds for it.
 *.exe
 *.exe~
 *.so
