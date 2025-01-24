@@ -1,30 +1,16 @@
 tasks:
   - name: "Init"
-    command: |
-      #!/usr/bin/env sh
-      set -e
-      # Download V
-      if [ ! -e 'v/' ]
-      then
-        git clone https://github.com/vlang/v
-      fi
-      # Make V
+    init: |
+      git clone https://github.com/vlang/v
       cd v
-      if [ ! -e './v' ]
-      then
-        make
-      fi
-      # Symlink V
-      sudo ./v symlink
-      cd ..
-      # Download Clockwork
-      if [ ! -e 'clockwork/' ]
-      then
-        git clone https://github.com/EmmaTheMartian/clockwork --recursive
-      fi
-      # Build and install Clockwork
-      cd clockwork
-      ../v/v run . install
-      cd ..
+      make
+    command: |
+      # Symlink V (this resets every time)
+      sudo ./v/v symlink
+      # Install Clockwork (this needs to be done every time unfortunately)
+      # We cd to ~ so that we do not delete an install.vsh that may already exist.
+      cd ~
+      v download -RD https://raw.githubusercontent.com/EmmaTheMartian/clockwork/refs/heads/main/scripts/install.vsh
+      cd -
       # Install project dependencies
       clockwork deps
